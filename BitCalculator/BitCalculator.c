@@ -96,15 +96,45 @@ void shiftCalc(int _shftflag , int _num , int _shiftNum) {
 		}
 		printf("\n");
 
-
-
-
 	}
-	
-	
 	}
 
 }
+
+/*
+ *			9e a2 76  EA 
+ *			ver : 9e &0xC0;
+ *			padding : 9e & 0x20;
+ *			extension : 9e & 0x10;
+ *       	cc : 9e&0xF;
+ *
+ *			
+ *			9e
+ *			1001 1110
+ *
+ *			
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ */
 
 
 int main() {
@@ -128,8 +158,9 @@ int main() {
 
 		for(int i=31; i>=0; i--) {
 			mask  = 1 << i;
+//	printf("iCount : %d   bitMask : %d \n ", i,mask);
 			printf("%d", inputNum & mask ? 1 : 0);
-
+		
 			   if(i%8 == 0)
  	                         printf(" ");
 
