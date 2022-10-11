@@ -78,16 +78,84 @@ int main() {
    */
 
 
-/*
-int a;
-int* pa;
-pa = &a;
+    /*
+    int a;
+    int* pa;
+    pa = &a;
 
-printf("pa의 값 : %p \n",pa);
-printf("(pa+1)의 값 : %p  \n",pa + 1);
+    printf("pa의 값 : %p \n",pa);
+    printf("(pa+1)의 값 : %p  \n",pa + 1);
 
-pa의 값 : 0x7fffdb5da28c 
-(pa+1)의 값 : 0x7fffdb5da290 
-*/
+    pa의 값 : 0x7fffdb5da28c 
+    (pa+1)의 값 : 0x7fffdb5da290 
+    */
+
+    /*
+        1차원 배열 가르키기 
+
+
+    int arr[3] = {1,2,3};
+    int *parr;
+
+    parr = arr;     // parr = &arr[0]
+    printf("arr[1] : %d",arr[1]);
+    printf("parr[1] : %d \n" , parr[1]);
+
+
+    arr[1] : 2
+    parr[1] : 2
     return 0;
+    
+
+    int arr[10] = {100,98,97,95,89,76,92,96,100,99};
+
+    int* parr = arr;
+    int sum = 0;
+
+    while(parr - arr <=9) {
+        sum+=(*parr);
+        parr++;
+    }
+
+    printf("내 시험 점수 평균 : %d \n",sum / 10);
+    */
+
+   /*
+        포인터의 포인터 
+
+
+    int a;
+    int *pa;
+    int **ppa;
+
+    pa = &a;
+    ppa = &pa;
+
+    a=3;
+
+    printf("a : %d // *pa : %d // **ppa : %d \n", a, *pa, **ppa);
+    printf("&a : %p // pa : %p // *ppa : %p \n", &a, pa, *ppa); //&a : a의 주소값   , pa : pa의 주소값 , *ppa의 주소값 
+    printf("&pa : %p // ppa : %p \n", &pa, ppa);
+
+    a : 3 // *pa : 3 // **ppa : 3 
+    &a : 0x7ffe8d8ed334 // pa : 0x7ffe8d8ed334 // *ppa : 0x7ffe8d8ed334 
+    &pa : 0x7ffe8d8ed338 // ppa : 0x7ffe8d8ed338       왜 &a의 값과 다른지 이해가 안됨.  포인터 자체도 변수이므로 메모리상의 일부분을 차지한다. 
+    
+
+    int arr[3] = {1,2,3};
+    int (*parr)[3] = &arr;
+
+    printf("arr[1] : %d \n",arr[1]);
+    printf("parr[1] : %d \n",(*parr)[1]);
+    arr[1] : 2 
+    parr[1] : 2
+    */
+   int z = 5;
+   int a = 3;
+   int *b = &z;
+   int *c = &a;
+
+   printf(" a : %p    b : %p   c : %p",&a,&b,&c);
+  // printf(" a : %p    b = %p   c : %p",*a,*b,*c);
+   return 0;
 }
