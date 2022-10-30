@@ -150,12 +150,11 @@ int main() {
     arr[1] : 2 
     parr[1] : 2
     */
-   int z = 5;
-   int a = 3;
-   int *b = &z;
-   int *c = &a;
+   int aa = 10;
+   int* a = &aa;
+   int bb = 20;
+   int* b = &bb;
 
-   printf(" a : %p    b : %p   c : %p",&a,&b,&c);
-  // printf(" a : %p    b = %p   c : %p",*a,*b,*c);
+   printf("a : %d   b :  %d",*a,*b);
    return 0;
 }
