@@ -7,6 +7,16 @@ typedef struct Node {
 }Node;
 
 
+void rmv(Node **head , int val) {
+	Node *node = *head;
+	if(node != NULL && node->data == val) {
+	    node->next = NULL;		
+	}
+
+    	printf("rmv 완료.  val : %d " , val);
+	
+}
+
 void append(Node **head , int value) {
 
 	Node *newNode = (Node*)malloc(sizeof(Node)); // newNode에 동적으로 메모리 할당 
@@ -45,6 +55,10 @@ int main() {
 
 	display(list);
 
+	rmv(&list,10);
+	rmv(&list,30);
+	printf("### display " );
+	display(list);
 	return 0;
 
 }
