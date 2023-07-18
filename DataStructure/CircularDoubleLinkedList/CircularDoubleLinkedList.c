@@ -42,12 +42,16 @@ void CDLL_AppendNode(Node **Head , Node *NewNode)
 	}
 }
 
+/*
+   노드를 특정 노드 뒤에 삽입 
+   NewNode가 Current 다음에 삽입되며 리스트가 갱신된다. 
+   */
 void CDLL_InsertAfter(Node *Current, Node *NewNode) 
 {
-	NewNode->NextNode = Current->NextNode;
-	NewNode->PrevNode = Current;
+	NewNode->NextNode = Current->NextNode; // 새 노드의 NextNode를 Current의 Next Node로 
+	NewNode->PrevNode = Current; // 새 노드의 PrevNode를 Current로 
 
-	Current->NextNode->PrevNode = NewNode;
+	Current->NextNode->PrevNode = NewNode; 
 	Current->NextNode = NewNode;
 }
 
