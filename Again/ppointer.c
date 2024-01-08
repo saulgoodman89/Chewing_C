@@ -19,18 +19,51 @@
 //	return 0;
 // }
 
-int max_number(int *parr) {	// 배열 arr을 param으로 받는다.
-	int i;
-	int max = parr[0];  // 최대값을 parr[0] 으로 초기화 한다. 
+//int max_number(int *parr) {	// 배열 arr을 param으로 받는다.
+//	int i;
+//	int max = parr[0];  // 최대값을 parr[0] 으로 초기화 한다. 
 
-	for(i=1; i<10; i++) {	// parr[1] 부터 parr[9] 까지 parr[i] 값이 max 보다 큰지 비교하고 , 크다면 max 값에 초기화 한다. 
-	    if(parr[i]>max) {
-	    	max=parr[i];
-	    }
-	}
-	return max;
+//	for(i=1; i<10; i++) {	// parr[1] 부터 parr[9] 까지 parr[i] 값이 max 보다 큰지 비교하고 , 크다면 max 값에 초기화 한다. 
+//	    if(parr[i]>max) {
+//	    	max=parr[i];
+//	    }
+//	}
+//	return max;
+//}
+
+/*
+	pa와 pb의 주소값을 파라미터로 받는다.
+	pa와 pb 본인의 주소값을 받기 위해 더플 포인터 사용. 
+   
+int pswap(int **ppa, int **ppb) {
+	int *temp = *ppa;
+
+	printf("ppa가 가리키는 변수의 주소값 : %p \n",*ppa);
+	printf("ppb가 가리키는 변수의 주소값 : %p \n",ppb);
+
+	*ppa = *ppb;
+	*ppb = temp;
+	return 0;
+}*/
+
+//int add_element(int (*arr)[2],int row) {
+	//int i,j;
+	//for(i=0; i<row; i++) {
+		//for(j=0; j<2; j++) {
+			//arr[i][j]++;
+		//}
+	//}
+    //return 0;
+//}
+
+int max(int a, int b) {
+	if (a>b)
+	    return a;
+	else
+	    return b;
+
+	return 0;
 }
-
 int main() {
 	//int a;
 	//int *pa;
@@ -72,15 +105,64 @@ int main() {
 
     //add_number(arr);
     //printf("배열의 각 원소 : %d , %d , %d \n",arr[0],arr[1],arr[2]);
-    int arr[10];
-    int i;
+  //  int arr[10];
+  //  int i;
 
-    for(i=0; i<10; i++) {
-	scanf("%d",&arr[i]);	// 숫자 10개를 입력받는다. 입력받은 숫자는 각 인덱스에 맞게 배열에 초기화 된다. 
-    }
+   // for(i=0; i<10; i++) {
+//	scanf("%d",&arr[i]);	// 숫자 10개를 입력받는다. 입력받은 숫자는 각 인덱스에 맞게 배열에 초기화 된다. 
+  //  }
 
-    printf("입력한 배열 중 가장 큰 수 : %d \n", max_number(arr));
-	return 0;
+    //printf("입력한 배열 중 가장 큰 수 : %d \n", max_number(arr));
+//	int a,b;
+//	int *pa , *pb;
+
+	//pa = &a; // pa에 a의 주소값을 초기화 한다.
+	//pb = &b; // pb에 b의 주소값으 초기화 한다.
+
+	
+	/*
+		pa : pa가 가르키는 변수의 주소 값
+		&pa : pa의 주소값 
+	 */
+	//printf("pa가 기리키는 변수의 주소값 : %p \n", pa);
+	//printf("pa의 주소값 : %p \n\n",&pa);
+	//printf("pb가 가리키는 변수의 주소값 : %p \n", pb);
+	//printf("pb의 주소값 :%p \n", &pb);
+//
+	//printf("########## 호출 ########## \n");
+	//pswap(&pa, &pb);
+	//printf("########## 호출 끝 ########## \n");
+//
+	//printf("pa가 가리키는 변수의 주소값 : %p \n",pa);
+	//printf("pa의 주소값 :%p \n\n",&pa);
+	//printf("pb가 가리키는 변수의 주소값 : %p \n",pb);
+	//printf("pb의 주소값 :%p \n",&pb);
+
+    //int arr[3][2];
+    //int i,j;
+//
+    //for(i=0; i<3; i++) {
+	//for(j=0; j<2; j++) {
+		//scanf("%d",&arr[i][j]);
+	//}
+    //}
+//
+    //add_element(arr,3);
+//
+    //for(i=0; i<3; i++) {
+	//for(j=0; j<2; j++) {
+		//printf("arr[%d][%d] : %d \n",i,j,arr[i][j]);
+	//}
+    //}
+
+    int a,b;
+    int (*pmax)(int,int);
+    pmax = max;
+
+    scanf("%d %d",&a,&b);
+    printf("max(a,b) %d \n" , max(a,b));
+    printf("pmax(a,b) : %d \n", pmax(a,b));
+    return 0;
 
 }
 
