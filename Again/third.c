@@ -1,5 +1,8 @@
 #include<stdio.h>
 
+int main() {
+	
+}
 /*
 int main() {
 	int arr[5]; //크기가 5인 arr배열 초기화
@@ -82,15 +85,23 @@ int main() {
 	//}
 	//return 0;
 //}
+
+/*
 void changeValue(int *value) {
 	*value = 5;
 }
 
 int main() {
-	int a = 3;
-	printf("a 값은 : %d     / a의 주소값은 : %p \n",a,&a); 
-	changeValue(&a);
-	printf("a 값은 : %d   /  a의 주소값은 : %p \n",a,&a);
+	int i = 100;
+	int *p = &i;
+	int **q = &p;
+
+	*p = 200;  // i를 가리키고 있으므로 i 값이 바뀐다. 
+	printf("i=%d , *q = %d , **q = %d \n",i,*p,**q);
+
+	**q = 300; // q->pi->i를 가리키고 있으므로 i 값이 바뀐다. 
+	printf("i = %d , *p = %d , **q = %d \n",i,*p,**q);
+
 	return 0;
-}
+}*/
 
