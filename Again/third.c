@@ -1,18 +1,43 @@
 #include<stdio.h>
-
-int str_length(char *str) {
-	int i = 0;
-	while (str[i]) {
-		i++;
-	}
-	return i;
-}
-
+//
+//int str_length(char *str) {
+	//int i = 0;
+	//while (str[i]) {
+		//i++;
+	//}
+	//return i;
+//}
+//
 int main() {
 
-    char str[] = {"What is your name?"};
+    char str1[10], str2[10];
 
-    printf("이 문자열의 길이 : %d \n", str_length(str));
+    printf("문자열을 입력하세요 : ");
+    scanf("%s",str1);
+    printf("입력한 문자열 : %s \n",str1);
+    
+    printf("문자열을 입력하세요 : ");
+    scanf("%s",str2);
+    printf("입력한 문자열 : %s \n",str2);
+    
+    /*
+       	stdio.h 에 정의된 FILE 포인터 타입의 글로벌 변수. 
+	이를 통해 표준 입력 스트림에 접근.
+	stdin은 버퍼링 입력을 사용한다.
+	사용자가 엔터키를 누를 때 까지 입력은 버퍼에 저장되며 언테키가 눌리면 입력이 프로그램에 전달. 
+       */
+/*
+    char str[30];
+    int i;
+
+    scanf("%d \n",&i);
+    scanf("%s \n", str);
+
+    printf("str : %s\n",str);
+  return 0;*/
+ //   char str[] = {"What is your name?"};
+
+   // printf("이 문자열의 길이 : %d \n", str_length(str));
     //char sentence_1[4] = {'P','s','i','\0'};
     //char sentence_2[4] = {'P','s','i',0};
     //char sentence_3[4] = {'P','s','i',(char)NULL};
