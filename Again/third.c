@@ -8,8 +8,40 @@
 	//return i;
 //}
 //
-int main() {
 
+int copy_str(char *dest , char *src) {
+	while (*src) {
+		*dest = *src;
+		src++;
+		dest++;
+	}
+	*dest='\0';
+	return 1;
+}
+int main() {
+	char str1[] = "hello";
+	char str2[] = "hi";
+
+	printf("복사 이전 : %s \n",str1);
+	copy_str(str1,str2);
+	printf("복사 이후 :%s \n", str1);
+
+    /*
+		literal : 소스 코드 상에서 고정된 값을 가지는 것.
+		C언어에서 ""로 묶인 것들을 문자열 리터럴로 부른다. 
+
+		*pstr = "goodbye" 을 실행하게 되면 컴퓨터는 goodbye의 시작 주소 값을 가져와 pstr에 대입한다. 
+		리터럴은 오직 읽기만 가능한 곳. 이곳을 함부러 변경하려 하면 프로그램이 종료된다.
+
+	   */
+   // char str[] = "sentence";
+    // sentence 라는 문자열이 저장된 주소값.
+   // char *pstr = "sentence";
+	
+    //printf("str : %s \n", str);
+   // printf("pstr : %s \n", pstr);
+//printf("%d \n", "sentence");	
+    /*
     char str1[10], str2[10];
 
     printf("문자열을 입력하세요 : ");
@@ -19,7 +51,7 @@ int main() {
     printf("문자열을 입력하세요 : ");
     scanf("%s",str2);
     printf("입력한 문자열 : %s \n",str2);
-    
+    */
     /*
        	stdio.h 에 정의된 FILE 포인터 타입의 글로벌 변수. 
 	이를 통해 표준 입력 스트림에 접근.
