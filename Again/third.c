@@ -1,4 +1,15 @@
 #include<stdio.h>
+
+int add_one(int *a) {
+	*a += 1;
+	return 0;
+}
+//struct Books {
+	//char name[30];
+	//char auth[30];
+	//char publ[30];
+	//int borrowed;
+//};
 //
 //int str_length(char *str) {
 	//int i = 0;
@@ -9,23 +20,125 @@
 //}
 //
 
-int copy_str(char *dest , char *src) {
-	while (*src) {
-		*dest = *src;
-		src++;
-		dest++;
-	}
-	*dest='\0';
-	return 1;
-}
+
+//int copy_str(char *dest , char *src) {
+	//while (*src) {
+		//*dest = *src;
+		//src++;
+		//dest++;
+	//}
+	//*dest='\0';
+	//return 1;
+//}
+
+//char copy_str(char *dest , const char *src) {
+	//while (*src) {
+		//*dest = *src;
+		//src++;
+		//dest++;
+	//}
+	//*dest = '\0';
+	//return 1;
+//}
+//
+//struct test {
+	//int a,b;
+//};
+
+//struct TEST {
+	//int c;
+//};
+//
+
+//struct TEST {
+	//int c;
+//};
+
+struct TEST {
+	int i;
+	char c;
+};
+
 int main() {
-	char str1[] = "hello";
-	char str2[] = "hi";
+	struct TEST st , st2;
 
-	printf("복사 이전 : %s \n",str1);
-	copy_str(str1,str2);
-	printf("복사 이후 :%s \n", str1);
+	st.i = 1;
+	st.c = 'c';
 
+	st2 = st;
+
+	printf("st2.i : %d \n",st2.i);
+	printf("st2.c : %c \n",st2.c);
+//    struct TEST t;
+  //  struct TEST *pt = &t;
+    
+    //pt->c = 0;
+    //add_one(&t.c);
+    //printf("t.c : %d \n", t.c);
+
+//    add_one(&pt->c);
+  //  printf("t.c : %d \n",t.c);
+
+//
+    //t.pointer=&i;
+    //*t.pointer = 3;
+    //printf("i : %d \n",i);
+//
+    //*pt->pointer = 4;
+    //printf("i : %d \n",i);
+    //struct TEST t;
+    //struct TEST *pt = &t;
+    //// pt가 가리키는 구조체 변수 C 멤버의 값을 0으로 set 한다.
+    //(*pt).c = 0;
+    //printf("t.c : %d \n",t.c);
+//
+    //// pt가 가리키는 구조체 변수의 C 멤버값을 1로 한다.
+    //pt->c = 1;
+    //printf("t.c : %d \n",t.c);
+//
+	//struct test st;
+	//struct test *ptr;
+//
+	//ptr = &st;
+	//ptr->a = 1;
+	//ptr->b = 2;
+	//printf("st의 a 멤버 : %d \n", st.a);
+	//printf("st의 b 멤버 : %d \n", st.b);
+//
+	//
+	//ptr = &st;
+//
+	//(*ptr).a = 1;
+	//(*ptr).b = 2;
+//
+	//printf("st의 a 멤버 : %d \n", st.a);
+	//printf("st의 b 멤버 : %d \n", st.b);
+    //struct Books hp;
+//
+    //copy_str(hp.name,"Harry Potter");
+    //copy_str(hp.auth,"J.K. Rolling");
+    //copy_str(hp.publ,"Scholastic");
+    //hp.borrowed = 0;
+//
+    //printf("책 이름 : %s \n",hp.name);
+    //printf("저자 이름 : %s \n",hp.auth);
+    //printf("출판사 이름 : %s \n",hp.publ);
+//
+    //Psi.age = 99;
+    //Psi.height = 185;
+    //Psi.weight = 80;
+//
+    //printf("Psi에 대한 정보 \n");
+    //printf("나이 : %d \n",Psi.age);
+    //printf("키 : %d \n",Psi.height);
+    //printf("몸무게 :%d \n",Psi.weight);
+	//char str1[] = "hello";
+	//char str2[] = "hi";
+//
+	//printf("복사 이전 : %s \n",str1);
+	//copy_str(str1,str2);
+	//printf("복사 이후 :%s \n", str1);
+//
     /*
 		literal : 소스 코드 상에서 고정된 값을 가지는 것.
 		C언어에서 ""로 묶인 것들을 문자열 리터럴로 부른다. 
