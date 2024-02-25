@@ -1,9 +1,10 @@
 #include<stdio.h>
+#include<stdlib.h>
 
-int add_one(int *a) {
-	*a += 1;
-	return 0;
-}
+//int add_one(int *a) {
+//	*a += 1;
+//	return 0;
+//}
 //struct Books {
 	//char name[30];
 	//char auth[30];
@@ -59,17 +60,117 @@ struct TEST {
 	char c;
 };
 
-int main() {
-	struct TEST st , st2;
+int main(int argc , char **argv) {
+	int i,j,input,sum = 0;
+	int subject , students;
+	int **arr;
 
-	st.i = 1;
-	st.c = 'c';
+	printf("과목 수 : %d ");
+	scanf("%d",&subject);
 
-	st2 = st;
+	printf("학생의 수 : ");
+	scanf("%d", &students);
 
-	printf("st2.i : %d \n",st2.i);
-	printf("st2.c : %c \n",st2.c);
-//    struct TEST t;
+	arr=(int**)malloc(sizeof(int *)*subject);
+
+	for(i=0; i<subject; i++) {
+		arr[i] = (int*)malloc(sizeof(int) * students);
+	}	
+
+	for(i=0; i<subject; i++) {
+		printf("과목 %d 점수 --------------- ");
+
+		for(j=0; j<students; j++) {
+			printf("학생 %d 점수 입력 : ",j);
+			scanf("%d", &input);
+			arr[i][j] = input;
+		}
+	}
+
+	for(i=0; i<subject; i++) {
+		sum = 0;
+		for(j=0; j<students; j++) {
+			sum+= arr[i][j];
+		}
+		printf("과목 %d 평균점수 : %d \n",i,sum/students);
+	}
+
+	for(i=0; i<subject; i++) {
+		free(arr[i]);
+	}
+
+	free(arr);
+
+	
+//	int i;
+	//int x,y;
+	//int **arr;
+
+	//printf("arr[x][y]를 만든다 \n");
+	//scanf("%d %d",&x,&y);
+
+	//arr = (int **)malloc(sizeof(int *) *x);
+	//for (i = 0; i < x; i++) {
+		//arr[i] = (int *)malloc(sizeof(int) * y);
+	//}
+	//printf("생성 완료! \n");
+
+	//for (i = 0; i < x; i++) {
+		//free(arr[i]);
+	//}
+	//free(arr);
+////	int student;
+	//int i , input;
+	//int *score;
+	//int sum = 0;
+
+	//printf("학생의 수는 : ");
+	//scanf("%d",&student);
+
+	//score = (int*)malloc(student * sizeof(int));
+
+	//int memLength = sizeof(score);
+
+	//printf("memLength : %d \n\n",memLength);
+
+	//for(i=0; i<student; i++) {
+		//printf("학생 %d의 점수 : ",i);
+		//scanf("%d",&input);
+		//score[i] = input;
+	//}
+
+	//for(i=0; i<student; i++) {
+		//sum += score[i];
+	//}
+
+	//printf("전체 학생 평균 점수 : %d \n",sum / student);
+	//free(score);
+////	heap 
+		//사용자가 자유롭게 할당하거나 해제 할 수 있다. 
+		//할당과 해제가 자유로운 만큼 제대로 사용해야 한다. 
+	//int SizeOfArray;
+	//int *arr;
+	//int *value;
+	//printf("만들고 싶은 배열의 원소의 수 : ");
+	//scanf("%d", &SizeOfArray);
+
+	//arr = (int*)malloc(sizeof(int) * SizeOfArray);
+
+
+	//arr[29] = 1001;
+	//value = arr[29];
+	//printf("value : %d",value);
+	//free(arr);
+////	struct TEST st , st2;
+
+	//st.i = 1;
+	//st.c = 'c';
+
+	//st2 = st;
+
+	//printf("st2.i : %d \n",st2.i);
+	//printf("st2.c : %c \n",st2.c);
+////    struct TEST t;
   //  struct TEST *pt = &t;
     
     //pt->c = 0;
