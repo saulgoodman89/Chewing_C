@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 
 //int add_one(int *a) {
 //	*a += 1;
@@ -55,51 +56,113 @@
 	//int c;
 //};
 
-struct TEST {
-	int i;
-	char c;
-};
+//struct node {
+	//int data;
+	//struct node* nextNode;
+//};
+
+//struct node* createNode(int data) {
+	//struct node* newNode = (struct node*)malloc(sizeof(struct node));
+	//newNode->data = data;
+	//newNode->nextNode = NULL;
+	//return newNode;
+//}
+
+//struct node* insertNode(struct node* current , int data) {
+	//struct node* after = current->nextNode;
+
+	//struct node* newNode = (struct node*)malloc(sizeof(struct node));
+	//newNode->data = data;
+	//newNode->nextNode = after;
+	//current->nextNode = newNode;
+	//return newNode;
+//}
+
+//void printNode(struct node* from) {
+	//while (from) {
+		//printf("노드의 데이터 : %d \n",from->data);
+		//from = from->nextNode;
+	//}
+//}
+
+//struct node* destoryNode(struct node *destroy, struct node *head) {
+		//struct node *next = head;
+
+		//if(destroy == head) {
+			//free(destroy);
+			//return 0;
+		//}
+
+		//while(next) {
+			//if(next->nextNode == destroy) {
+				//next->nextNode = destroy->nextNode;
+			//}
+			//next = next->nextNode;
+		//}
+		//free(destroy);
+//}
 
 int main(int argc , char **argv) {
-	int i,j,input,sum = 0;
-	int subject , students;
-	int **arr;
+	char str[50] = "I love Chewing C hahaha";
+	char str2[50];
+	char str3[50];
+	/*
+	memcpy(void *dest , const void *source , size_t num);
+	*dest : 복사 받을 메모리를 가르킴
+	*str : 복사할 메모리를 가지고 있는 포인터 
+	num : 복사할 데이터 값의 길이(byte 단위)*/
+	int len = strlen(str)-5;
+	printf("len : %d \n",len);
+	memcpy(str2,str,strlen(str));	
+	memcpy(str3,"hello",6);
 
-	printf("과목 수 : %d ");
-	scanf("%d",&subject);
+	printf("%s \n",str);
+	printf("%s \n",str2);
+	printf("%s \n",str3);
+//	struct node* node1 = createNode(100);
+	//struct node* node2 = insertNode(node1,200);
+	//struct node* node3 = insertNode(node2,300);
+	//struct node* node4 = insertNode(node2,400);
+	//printNode(node1);
+//	int i,j,input,sum = 0;
+	//int subject , students;
+	//int **arr;
 
-	printf("학생의 수 : ");
-	scanf("%d", &students);
+	//printf("과목 수 : %d ");
+	//scanf("%d",&subject);
 
-	arr=(int**)malloc(sizeof(int *)*subject);
+	//printf("학생의 수 : ");
+	//scanf("%d", &students);
 
-	for(i=0; i<subject; i++) {
-		arr[i] = (int*)malloc(sizeof(int) * students);
-	}	
+	//arr=(int**)malloc(sizeof(int *)*subject);
 
-	for(i=0; i<subject; i++) {
-		printf("과목 %d 점수 --------------- ");
+	//for(i=0; i<subject; i++) {
+		//arr[i] = (int*)malloc(sizeof(int) * students);
+	//}	
 
-		for(j=0; j<students; j++) {
-			printf("학생 %d 점수 입력 : ",j);
-			scanf("%d", &input);
-			arr[i][j] = input;
-		}
-	}
+	//for(i=0; i<subject; i++) {
+		//printf("과목 %d 점수 --------------- ");
 
-	for(i=0; i<subject; i++) {
-		sum = 0;
-		for(j=0; j<students; j++) {
-			sum+= arr[i][j];
-		}
-		printf("과목 %d 평균점수 : %d \n",i,sum/students);
-	}
+		//for(j=0; j<students; j++) {
+			//printf("학생 %d 점수 입력 : ",j);
+			//scanf("%d", &input);
+			//arr[i][j] = input;
+		//}
+	//}
 
-	for(i=0; i<subject; i++) {
-		free(arr[i]);
-	}
+	//for(i=0; i<subject; i++) {
+		//sum = 0;
+		//for(j=0; j<students; j++) {
+			//sum+= arr[i][j];
+		//}
+		//printf("과목 %d 평균점수 : %d \n",i,sum/students);
+	//}
 
-	free(arr);
+	//for(i=0; i<subject; i++) {
+		//free(arr[i]);
+	//}
+
+	//free(arr);
 
 	
 //	int i;
