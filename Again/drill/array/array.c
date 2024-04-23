@@ -24,9 +24,20 @@ int main() {
 				rank++;
 			}
 		}
+		/*
+			1 번째 학생의 성적은 ? 99
+			2 번째 학생의 성적은 ? 40
+			3 번째 학생의 성적은 ? 28
+			4 번째 학생의 성적은 ? 75
+			5 번째 학생의 성적은 ? 55
+		*/
+		// 99 75 55 40 28  5 2 1 4 3 
+		//printf("arr[%d] : %d /  rank : %d \n",i,arr[i],rank);			
+		printf("rank : %d \n",rank);
 		arr[rank] = arr[i];
 		rank = 1;
 	}
+
 
 	for(i=0; i<total; i++) {
 		printf("Sort arr[%d]  :  %d \n", i, arr[i]);
