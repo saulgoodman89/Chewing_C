@@ -13,14 +13,23 @@ int main() {
 	printf("%d 번째 학생의 성적은 ? ", i + 1);
 		scanf("%d", &arr[i]);
 	}
-	for (i = 0; i < total; i++) {
-		ave = ave + arr[i];
-	}
-		ave = ave / total;
-	printf(" 전체 학생의 평균은 : %d \n", ave);
-	for (i = 0; i < total; i++) {
-	
 
+	/*
+	arr[i] , 
+	arr[i] > arr[j+j]
+	arr[i] > arr[i+j]*/
+	for (i = 0; i < total; i++) {
+		for(int j=0; j<total; j++) {
+			if(arr[i] > arr[j]) {
+				rank++;
+			}
+		}
+		arr[rank] = arr[i];
+		rank = 1;
+	}
+
+	for(i=0; i<total; i++) {
+		printf("Sort arr[%d]  :  %d \n", i, arr[i]);
 	}
 		return 0;
 
